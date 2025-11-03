@@ -17,39 +17,46 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 
 import numpy as np
-import matplotlib.pyplot as plt
-x = np.array([0,1,2,3,4,5,6,7,8,9])
-y = np.array([1,3,2,5,7,8,8,9,10,12])
-plt.scatter(x,y)
-plt.show()
-xmean = np.mean(x)
-ymean = np.mean(y)
+X= np.array(eval(input()))
+Y= np.array(eval(input()))
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
 num=0
-den=0
-for i in range(len(x)):
-    num+=(x[i]-xmean)*(y[i]-ymean)
-    den+=(x[i]-xmean)**2
-m = num/den
-b = ymean - m*xmean
-print(m,b)
-ypred = m*x+b
-print(ypred)
+denom=0
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denom=(X[i]-X_mean)**2
+  m=num/denom
+  c=Y_mean-m*X_mean
+  print(m,c)
+  Y_pred=m*X+c
+  print(Y_pred)
 
+  import matplotlib.pyplot as plt
+  plt.scatter(X,Y,color='RED')
+  plt.plot(X,Y_pred,color='blue')
+  plt.show()
 
-plt.scatter(x,y,color='Red')
-plt.plot(x,ypred,color='Blue')
-plt.show()
 
 ```
 ## Output
 </br>
-<img width="790" height="708" alt="image" src="https://github.com/user-attachments/assets/03308aa0-4ca2-45e0-9567-f1ad10371212" />
+<img width="682" height="607" alt="image" src="https://github.com/user-attachments/assets/2c342125-c1d3-4afc-8d31-d5cd4e298de2" />
+
 
 </br>
-<img width="766" height="842" alt="image" src="https://github.com/user-attachments/assets/75f8c494-e148-46f3-86bf-475fb941df08" />
+<img width="683" height="554" alt="image" src="https://github.com/user-attachments/assets/9404a72e-5c73-402e-b86c-38e2d1f14d27" />
 
 </br>
+<img width="715" height="556" alt="image" src="https://github.com/user-attachments/assets/4b08c49e-c2e7-4a6d-a5cb-e974547f4984" />
+
 </br>
+
+<img width="692" height="556" alt="image" src="https://github.com/user-attachments/assets/5d231880-9f00-481b-a2c0-a5993f404b05" />
+
+<br>
+<img width="678" height="554" alt="image" src="https://github.com/user-attachments/assets/3182530c-2c5b-49f7-8946-a0a196b0643f" />
+
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
